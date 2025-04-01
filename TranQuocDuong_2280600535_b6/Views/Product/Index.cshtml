@@ -1,0 +1,61 @@
+﻿
+
+<div class="container mt-4">
+    <h2 class="text-center">Danh sách Sản phẩm</h2>
+
+    <!-- Form thêm/sửa sản phẩm -->
+    <div class="card p-3 mb-4">
+        <h4>Thêm / Cập Nhật Sản Phẩm</h4>
+        <input type="hidden" id="productId">
+        <div class="row g-3">
+            <div class="col-md-5">
+                <input type="text" id="productName" class="form-control" placeholder="Tên sản phẩm">
+            </div>
+            <div class="col-md-4">
+                <input type="number" id="productPrice" class="form-control" placeholder="Giá">
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary" onclick="addProduct()">Thêm</button>
+                <button class="btn btn-warning" onclick="updateProduct()">Cập nhật</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bảng hiển thị sản phẩm -->
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Tên Sản Phẩm</th>
+                <th>Giá</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody id="productTable"></tbody>
+    </table>
+</div>
+
+<!-- Modal Bootstrap hiển thị chi tiết sản phẩm -->
+<div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="productDetailLabel">Chi Tiết Sản Phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>ID:</strong> <span id="productDetailId"></span></li>
+                    <li class="list-group-item"><strong>Tên:</strong> <span id="productDetailName"></span></li>
+                    <li class="list-group-item"><strong>Giá:</strong> <span id="productDetailPrice"></span> VND</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Nhúng file JavaScript -->
+<script src="~/js/product.js"></script>
